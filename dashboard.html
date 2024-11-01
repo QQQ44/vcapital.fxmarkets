@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Financial Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/header-style.css">
+    <link rel="stylesheet" href="assets/css/new_style.css">
+    <link rel="stylesheet" href="assets/css/sidebar-menu.css">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0044cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .lang-menu {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 0;
+            background-color: #0044cc;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .lang-menu a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .lang-menu a:hover {
+            background-color: #003399;
+        }
+
+        .hero {
+            background: linear-gradient(to bottom, #0044cc, #ffffff);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .cta-button {
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            background-color: #cc7a00;
+        }
+
+        .blue-separator {
+            height: 5px;
+            background-color: #0044cc;
+            margin: 0;
+        }
+
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #0044cc;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ff9900;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header>
+        <div class="logo">Global V Capital</div>
+        <div class="lang-switch">
+            <button id="languageBtn">Language</button>
+            <div id="langMenu" class="lang-menu">
+                <a href="#" data-lang="en">English</a>
+                <a href="#" data-lang="zh">中文</a>
+                <a href="#" data-lang="fr">Français</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 大型展示区域 -->
+    <section class="hero">
+        <h1>Market Insights</h1>
+        <p>Your go-to resource for financial market updates and trends.</p>
+        <button class="cta-button">Get Started</button>
+    </section>
+
+    <!-- 分隔条 -->
+    <div class="blue-separator"></div>
+
+    <!-- 内容部分 -->
+    <main>
+        <section class="content">
+            <h2>Financial Resources</h2>
+            <p>Explore our extensive resources on market insights and analysis.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact us: <a href="mailto:info@globalvcapital.io">info@globalvcapital.io</a></p>
+        <p>&copy; 2024 Global V Capital. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageBtn = document.getElementById('languageBtn');
+            const langMenu = document.getElementById('langMenu');
+
+            languageBtn.addEventListener('click', function() {
+                langMenu.style.display = langMenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!languageBtn.contains(event.target) && !langMenu.contains(event.target)) {
+                    langMenu.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

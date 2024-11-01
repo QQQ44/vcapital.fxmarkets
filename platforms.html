@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our range of trading platforms and services.">
+    <title>Platforms - Global V Capital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- 引用 CSS 文件 -->
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background: rgba(255, 255, 255, 0.9); /* 透明效果 */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-y: auto;
+        }
+
+        header {
+            background-color: rgba(0, 68, 204, 0.9); /* 半透明头部背景颜色 */
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        nav {
+            margin: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff9900;
+            transform: translateY(-5px);
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95); /* Slight transparency */
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0044cc;
+            margin-bottom: 20px;
+        }
+
+        .cta {
+            background-color: #ff9900;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta:hover {
+            background-color: #cc7a00;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: #0044cc; /* 底部背景颜色 */
+            color: white; /* 底部字体颜色 */
+            text-align: center; /* 内容居中 */
+            padding: 20px; /* 内边距 */
+        }
+
+        footer p {
+            margin: 5px 0; /* 底部段落间距 */
+        }
+
+        /* Broker Recommendation Section */
+        .broker-recommendation {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .broker-recommendation h3 {
+            color: #0044cc;
+            margin-bottom: 20px;
+        }
+
+        .broker-list {
+            margin-bottom: 20px;
+        }
+
+        .broker-list select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .broker-reasons {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .broker-list option {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 id="header-title">Our Platforms</h1>
+        <p id="header-subtitle">Discover our range of trading solutions designed to empower your trading journey.</p>
+        <div class="language-switcher">
+            <label for="language">Choose Your Language:</label>
+            <select id="language" onchange="changeLanguage()">
+                <option value="en" selected>English</option>
+                <option value="zh">中文</option>
+            </select>
+        </div>
+    </header>
+
+    <nav>
+        <a href="https://fx.globalvcapital.io">Home</a>
+        <a href="https://market-insights.globalvcapital.io">Market Insights</a>
+        <a href="https://about.globalvcapital.io">About Us</a>
+        <a href="http://cfdplatform.globalvcapital.io">Contact Us</a>
+    </nav>
+
+    <section>
+        <h2 id="account-types-title">Account Types</h2>
+        <p id="account-types-desc">We offer a range of account types to suit all your trading needs:</p>
+        <ul id="account-types-list">
+            <li>1:2000 leverage up to</li>
+            <li>Low as 0.1 spread</li>
+            <li>PAMM Accounts</li>
+            <li>MAM Accounts</li>
+        </ul>
+        <p id="copy-trading-desc">For new users, we highly recommend our copy trading service!</p>
+        <p>If you're interested in our market quotes, check out the live market data below:</p>
+        <canvas id="marketChart"></canvas>
+    </section>
+
+    <!-- Broker Recommendation Section -->
+    <section class="broker-recommendation">
+        <h3>Recommended Brokers</h3>
+        <div class="broker-list">
+            <label for="broker-select">Select a broker to learn why we recommend them:</label>
+            <select id="broker-select" onchange="showBrokerReason()">
+                <option value="a">A Broker - Recommended (93%)</option>
+                <option value="b">B Broker - Highly Rated (95%)</option>
+                <option value="c">C Broker - Most Trusted (98%)</option>
+            </select>
+        </div>
+        <div class="broker-reasons" id="broker-reasons">
+            <p>Select a broker to see why they are recommended.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p id="footer-contact">Contact us: info@globalvcapital.io | Signals: info@tradesignalhub.com</p>
+        <p>&copy; 2024 Global V Capital. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('marketChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'], // 添加更多月份
+                datasets: [{
+                    label: 'Market Growth',
+                    data: [100, 200, 300, 250, 280, 320, 400], // 更新数据
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: { beginAtZero: true },
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // 定义多语言翻译内容
+        const translations = {
+            en: {
+                headerTitle: "Our Platforms",
+                headerSubtitle: "Discover our range of trading solutions designed to empower your trading journey.",
+                accountTypesTitle: "Account Types",
+                accountTypesDesc: "We offer a range of account types to suit all your trading needs:",
+                copyTradingDesc: "For new users, we highly recommend our copy trading service!",
+                footerContact: "Contact us: info@globalvcapital.io | Signals: info@tradesignalhub.com"
+            },
+            zh: {
+                headerTitle: "我们的交易平台",
+                headerSubtitle: "探索我们的多种交易解决方案，助力您的交易旅程。",
+                accountTypesTitle: "账户类型",
+                accountTypesDesc: "我们提供多种账户类型，以满足您所有的交易需求：",
+                copyTradingDesc: "对于新用户，我们强烈推荐我们的跟单交易服务！",
+                footerContact: "联系我们：info@globalvcapital.io | 信号：info@tradesignalhub.com"
+            }
+        };
+
+        // 切换语言功能
+        function changeLanguage() {
+            const selectedLanguage = document.getElementById("language").value;
+            document.getElementById("header-title").textContent = translations[selectedLanguage].header

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the latest trends and insights in the financial markets at Global V Capital.">
+    <title>Markets Overview - Global V Capital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/workspaces/vcapital-fxmarkets/assets/css/market-overview.css">
+    <link rel="stylesheet" href="/workspaces/vcapital-fxmarkets/assets/css/chart.css">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #F0F0F5; /* 背景颜色 */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(0, 68, 204, 0.9);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #0044cc;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .language-switcher select {
+            background: transparent;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff9900;
+        }
+
+        .market-overview {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            background: #EFE6DD;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0044cc; /* 主色 */
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        .cta {
+            display: inline-block;
+            background-color: #0044cc; /* CTA按钮颜色 */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .cta:hover {
+            background-color: #003399;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: #002D62; /* 主色 */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .news-item {
+            margin-bottom: 10px;
+        }
+
+        .news-date {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Markets Overview</h1>
+        <p>Explore the latest trends and insights in the financial markets.</p>
+        <div class="language-switcher">
+            <select id="language" onchange="changeLanguage()">
+                <option value="en" selected>English</option>
+                <option value="zh">中文</option>
+            </select>
+        </div>
+    </header>
+
+    <nav>
+        <a href="http://economic.globalvcapital.io">Economic Overview</a>
+        <a href="https://fx.globalvcapital.io">Home</a>
+        <a href="https://market-insights.globalvcapital.io">Market Insights</a>
+        <a href="https://about.globalvcapital.io">About Us</a>
+        <a href="https://portals.globalvcapital.io">Portals</a>
+    </nav>
+
+    <section class="market-overview">
+        <div class="section">
+            <h2>Forex Rates</h2>
+            <p>Latest forex rates for major currencies to help you make informed trading decisions.</p>
+            <a href="https://economic.globalvcapital.io/forex-rates" class="cta">View Forex Rates</a>
+        </div>
+        <div class="section">
+            <h2>Commodity Prices</h2>
+            <p>Check the current prices for gold, oil, and more to enhance your trading strategies.</p>
+            <a href="https://economic.globalvcapital.io/commodities-prices" class="cta">View Commodity Prices</a>
+        </div>
+        <div class="section">
+            <h2>Stock Indexes</h2>
+            <p>Stay updated on the performance of major stock indexes and market movements.</p>
+            <a href="https://economic.globalvcapital.io/stock-indexes" class="cta">Track Stock Indexes</a>
+        </div>
+        <div class="section">
+            <h2>Cryptocurrency Trends</h2>
+            <p>Follow the latest trends in the cryptocurrency market to make better investment choices.</p>
+            <a href="https://economic.globalvcapital.io/cryptocurrency-trends" class="cta">View Crypto Trends</a>
+        </div>
+        <img src="/workspaces/vcapital-fxmarkets/assets/image/market-chart.png" alt="Market Chart Overview" style="max-width: 100%; margin-top: 20px; border-radius: 10px;">
+    </section>
+
+    <section class="market-news">
+        <h2>Market News</h2>
+        <div class="news-item">
+            <span class="news-date">21 OCTOBER 2024:</span> Sterling Pound Surges on Strong Retail Sales Data <a href="#">Read more</a>
+        </div>
+        <div class="news-item">
+            <span class="news-date">18 OCTOBER 2024:</span> U.S. Dollar Surges on Strong Retail Sales Data <a href="#">Read more</a>
+        </div>
+        <div class="news-item">
+            <span class="news-date">17 OCTOBER 2024:</span> UK Inflation Falls Below 2%, Sparks Speculation of Rate Cut <a href="#">Read more</a>
+        </div>
+        <div class="news-item">
+            <span class="news-date">16 OCTOBER 2024:</span> Canadian Dollar Hits 10-Week Low Amid Softer Inflation Data <a href="#">Read more</a>
+        </div>
+        <div class="news-item">
+            <span class="news-date">15 OCTOBER 2024:</span> S&P 500 and Dow Jones Index Close at Record Highs <a href="#">Read more</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Contact us: <a href="mailto:support@tradesignalhub.com">support@tradesignalhub.com</a></p>
+        <p>&copy; 2024 Global V Capital. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // 语言切换功能
+        const translations = {
+            en: {
+                title: "Markets Overview",
+                description: "Explore the latest trends and insights in the financial markets.",
+                forex: "Latest forex rates for major currencies to help you make informed trading decisions.",
+                commodities: "Check the current prices for gold, oil, and more to enhance your trading strategies.",
+                stocks: "Stay updated on the performance of major stock indexes and market movements.",
+                cryptos: "Follow the latest trends in the cryptocurrency market to make better investment choices."
+            },
+            zh: {
+                title: "市场概览",
+                description: "探索金融市场的最新趋势和洞察。",
+                forex: "最新的主要货币外汇汇率，帮助您做出明智的交易决策。",
+                commodities: "查看黄金、石油等商品的当前价格，提升您的交易策略。",
+                stocks: "随时了解主要股票指数的表现和市场动态。",
+                cryptos: "跟随加密货币市场的最新趋势，做出更好的投资选择。"
+            }
+        };
+
+function changeLanguage() {
+    const selectedLanguage = document.getElementById("language").value;
+
+    // 更新标题和描述
+    document.querySelector('header h1').textContent = translations[selectedLanguage].title;
+    document.querySelector('header p').textContent = translations[selectedLanguage].description;
+
+    // 更新每个部分的内容
+    const sections = document.querySelectorAll('.section');
+    sections[0].querySelector('p').textContent = translations[selectedLanguage].forex;
+    sections[1].querySelector('p').textContent = translations[selectedLanguage].commodities;
+    sections[2].querySelector('p').textContent = translations[selectedLanguage].stocks;
+    sections[3].querySelector('p').textContent = translations[selectedLanguage].cryptos;
+}
+</script>
+
+</body>
+</html>
